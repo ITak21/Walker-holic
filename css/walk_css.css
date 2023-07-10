@@ -92,3 +92,15 @@ body{
     justify-content: center;
     align-items: center;
 }
+#login{
+    width: 6em;
+    height: 2em;
+    font-size: 0.5em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+#join{
+    text-decoration: none;
+    color: #464646;
+    font-size: 0.4em;
+}
