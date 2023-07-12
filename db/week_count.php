@@ -1,4 +1,5 @@
 <?php 
+if(isset($_SESSION['userId'])){
  $walk_sql="SELECT walk_count,walk_date from walk_tb where date_format(walk_date,'%Y-%m-%d')
  BETWEEN
      (SELECT ADDDATE(CURDATE(), - WEEKDAY(CURDATE()) + 0 ))
@@ -42,4 +43,17 @@ $dataPoints = array(
 	array("label"=> "일요일", "y"=> $count[6])
 
 );
+}else{
+	$dataPoints = array(
+
+		array("label"=> "월요일", "y"=> 3200),
+		array("label"=> "화요일", "y"=> 6300),
+		array("label"=> "수요일", "y"=> 2600),
+		array("label"=> "목요일", "y"=> 4700),
+		array("label"=> "금요일", "y"=> 7400),
+		array("label"=> "토요일", "y"=> 3500),
+		array("label"=> "일요일", "y"=> 5400)
+	
+	);
+}
 ?>

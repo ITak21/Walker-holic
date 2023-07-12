@@ -1,4 +1,5 @@
 <?php
+ session_start();
  include "db/sql_connect.php"; //sql 연결
  include "db/today_count.php"; //오늘의 걸음 수 가져오기
  include "db/week_count.php";	//한 주간의 걸음 수 가져오기
@@ -19,6 +20,11 @@
 <body>
     <section class="one">
         <div id="title">Walker Holic</div>
+		<?php
+		if(isset($_SESSION['userId'])){
+		echo "<a href='db/logout.php' id='logout'>로그아웃</a>";
+		}
+		?>
     </section>
     <section class="two">
 	
@@ -61,7 +67,17 @@
 
     </section>
     <section class="three">
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+		<?php
+		if(isset($_SESSION['userId'])){
+		echo"
+        <div id='chartContainer' style='height: 370px; width: 100%;'></div>
+		";
+		}else{
+			echo"
+			<div id='chartContainer' style='height: 370px; width: 100%; filter: blur(4px);'></div>
+			";
+		}
+		?>
 		<!-- 한 주간의 걸음 수를 불러와 차트형식으로 보여준다. canvasJS소스 활용. -->
     </section>
 

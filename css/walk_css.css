@@ -27,6 +27,10 @@ body{
     font-size: 2em;
     font-weight: bold;
 }
+#logout{
+    text-decoration: none;
+    color: #ffffff;
+}
 #count{
     display: flex;
     justify-content: center;
@@ -103,4 +107,49 @@ body{
     text-decoration: none;
     color: #464646;
     font-size: 0.4em;
+}
+#login_form{
+    display: flex;
+    width: 30%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #464646;
+    border-radius: 1.7%;
+}
+#login_title{
+    font-size: 2em;
+    margin-bottom: 20%;
+
+}
+#login_title> a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bolder;
+}
+#login_tag{
+    font-size: 1.2em;
+    color: #ffffff;
+    text-align: left;
+}
+#user_input{
+    display: flex;
+    margin: 0.5em;
+    width: 90%;
+    height: 25px;
+}
+
+#login_submit{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    margin-top: 10%;
+
 }
