@@ -1,6 +1,7 @@
 <?php 
 if(isset($_SESSION['userId'])){
- $walk_sql="SELECT walk_count,walk_date from walk_tb where date_format(walk_date,'%Y-%m-%d')
+	$user_id=$_SESSION['userId'];
+ $walk_sql="SELECT walk_count,walk_date from walk_tb where walker_id='$user_id' and date_format(walk_date,'%Y-%m-%d')
  BETWEEN
      (SELECT ADDDATE(CURDATE(), - WEEKDAY(CURDATE()) + 0 ))
  AND
